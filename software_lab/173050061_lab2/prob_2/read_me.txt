@@ -1,0 +1,1 @@
+In working directory, Your files are there on which you are working( modifying or creating new files). This script will reflect all changes in files or new file creations made in working directory in last 24 hours to BACKUP directory.

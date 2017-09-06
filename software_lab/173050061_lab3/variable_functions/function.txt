@@ -1,0 +1,6 @@
+scanf
+strlen
+gets
+main
+printf
+produce

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.head {
+	type: text/css;
+}
+.lang
+{
+	width: 70%;
+	height: 400px;
+	float:left;
+	background-color: grey;
+}
+
+.sub21 {
+	
+	width: 20%;
+	height: 180px;
+	float:left;
+	background-color: grey;
+}
+
+.sub22 {
+	
+	width: 80%;
+	height: 100px;
+	float:left;
+	background-color: grey;
+}
+
+textarea {
+	
+	width: 95%;
+	height: 250px;
+	float:left;
+}
+
+button {
+	float:right;
+}
+</style>
+</head>
+<body>
+<h1 class="head">
+<a href="/">codepad</a></h1>
+<div class="lang">
+<div class="sub1">
+codepad is an online compiler/interpreter, and a simple collaboration tool.
+Paste your code below, and codepad will run it and give you a short URL you can use to share it in chat or email. 
+</div>
+<div class="sub21">
+Language:
+<form>
+<input type="radio" name="Languages" value="C" checked> C <br>
+<input type="radio" name="Languages" value="C++"> C++ <br>
+<input type="radio" name="Languages" value="D"> D <br>
+<input type="radio" name="Languages" value="Haskell"> Haskell <br>
+<input type="radio" name="Languages" value="Lua"> Lua <br>
+<input type="radio" name="Languages" value="OCaml"> OCaml <br>
+<input type="radio" name="Languages" value="PHP"> PHP <br>
+<input type="radio" name="Languages" value="Perl"> Perl <br>
+<input type="radio" name="Languages" value="Plain Text"> Plain Text <br>
+<input type="radio" name="Languages" value="Python"> Python <br>
+<input type="radio" name="Languages" value="Ruby"> Ruby <br>
+<input type="radio" name="Languages" value="scheme"> scheme <br>
+</form>
+</div>
+<div class="sub22">
+<textarea class="editor"></textarea>
+<input type="checkbox" name="Private" value="Private">Private<br>
+<input type="checkbox" name="Run code" value="run code">run code<br>
+<button type="button">Submit</button>
+</div>
+</div> 
+</body>
+</html>

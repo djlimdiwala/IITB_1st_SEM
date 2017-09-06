@@ -1,0 +1,56 @@
+Landline phone numbers in india are of ten digits in which first 2-4 digits are STD codes and after that 6-8 digits are actual numbers. +91 or +(91) or 0 are placed before these numbers for country code.
+So, some accepting phone numbers are :-
++912611420500
++91261 1420500
++91261-1420500
++(91)261 1420500
++(91)261-1420500
+0261 1420500
+026 11420500
+etc
+
+
+Non accepting :- 
++91261142050014
++91261 41420500
++926114205004
+026  11420500
+etc
+
+
+
+
+
+
+
+
+
+
+MailIds are accepted in the following form:-
+
+(somwe text)(.some text{zero or more times})@(some text)(.some text{1 to 3 times})
+
+Example accepting emailIDs :-
+dhaval.limdiwala@gmail.com
+dhaval@gmail.com
+dhaval.limdiwala@gmail.com
+djlimdiwala@avanti.co.in
+173050061@iitb.ac.in
+
+
+Non accepting :- 
+dhaval.limdiwala@gmail.
+dhaval.limdiwala@gmaildhaval.limdiwala@g.com
+@gmail.com
+@dhaval.limdiwala@gmail.com
+
+
+
+
+Here, phone numbers are masked with ####valid#####
+gmail id is matched wuth THIS IS GMAIL ID
+yahoo is matched with HIS IS YAHOO ID
+other mail IDs are matched with tHIS IS PIRVATE MAIL ID
+
+
+

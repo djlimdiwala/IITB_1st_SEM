@@ -1,0 +1,1 @@
+This script accepts time and make an alerm call at that time.

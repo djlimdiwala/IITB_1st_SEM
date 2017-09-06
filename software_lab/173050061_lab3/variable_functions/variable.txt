@@ -1,0 +1,9 @@
+n
+k
+flag
+st
+en
+i
+j
+yy
+dd

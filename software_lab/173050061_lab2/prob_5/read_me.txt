@@ -1,0 +1,1 @@
+This script will distribute all files according to their type. For example all pdf files will be moved to folder called "pdf". All C files will be moved to folder "C". All shell script files will be moved to folder "sh" and so on..

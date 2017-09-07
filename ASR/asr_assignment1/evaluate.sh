@@ -1,0 +1,1 @@
+cat assgmt1/dev.txt

@@ -1,0 +1,7 @@
+Dhaval Limdiwala
+173050061
+
+In this assignment, I have used python instead of shell scripting as I asked to mam and she allowed. argument format is same Just python command is added.
+For example, see the following command for executing evaluate.py
+
+$ python evaluate.py --dir=dev_wrd --E=E_basic.fst --T=T.fst --G=G.fst assgmt1/dev.txt

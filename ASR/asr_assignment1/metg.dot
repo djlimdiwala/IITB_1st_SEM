@@ -1,0 +1,41 @@
+digraph FST {
+rankdir = LR;
+size = "8.5,11";
+label = "";
+center = 1;
+orientation = Landscape;
+ranksep = "0.4";
+nodesep = "0.25";
+0 [label = "0", shape = circle, style = bold, fontsize = 14]
+	0 -> 1 [label = "-:an/7.0327", fontsize = 14];
+	0 -> 2 [label = "-:ant/12.943", fontsize = 14];
+	0 -> 3 [label = "-:inf/14.447", fontsize = 14];
+	0 -> 4 [label = "-:and/4.3497", fontsize = 14];
+	0 -> 5 [label = "-:ann/13.195", fontsize = 14];
+	0 -> 6 [label = "-:any/7.3444", fontsize = 14];
+1 [label = "1", shape = circle, style = solid, fontsize = 14]
+	1 -> 7 [label = "canes:-", fontsize = 14];
+2 [label = "2", shape = circle, style = solid, fontsize = 14]
+	2 -> 8 [label = "canes:-", fontsize = 14];
+3 [label = "3", shape = circle, style = solid, fontsize = 14]
+	3 -> 9 [label = "canes:-", fontsize = 14];
+4 [label = "4", shape = circle, style = solid, fontsize = 14]
+	4 -> 10 [label = "canes:-", fontsize = 14];
+5 [label = "5", shape = circle, style = solid, fontsize = 14]
+	5 -> 11 [label = "canes:-", fontsize = 14];
+6 [label = "6", shape = circle, style = solid, fontsize = 14]
+	6 -> 12 [label = "canes:-", fontsize = 14];
+7 [label = "7", shape = circle, style = solid, fontsize = 14]
+	7 -> 13 [label = "woods:-", fontsize = 14];
+8 [label = "8", shape = circle, style = solid, fontsize = 14]
+	8 -> 13 [label = "woods:-", fontsize = 14];
+9 [label = "9", shape = circle, style = solid, fontsize = 14]
+	9 -> 13 [label = "woods:-", fontsize = 14];
+10 [label = "10", shape = circle, style = solid, fontsize = 14]
+	10 -> 13 [label = "woods:-", fontsize = 14];
+11 [label = "11", shape = circle, style = solid, fontsize = 14]
+	11 -> 13 [label = "woods:-", fontsize = 14];
+12 [label = "12", shape = circle, style = solid, fontsize = 14]
+	12 -> 13 [label = "woods:-", fontsize = 14];
+13 [label = "13", shape = doublecircle, style = solid, fontsize = 14]
+}

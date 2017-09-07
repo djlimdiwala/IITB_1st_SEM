@@ -1,0 +1,210 @@
+
+20 marks per question.
+10 marks for attempting.
+
+Q1
+
+The key to understanding this problem is to understand
+that the input has two parameters.
+P(n, k)
+n is the size of the array.
+k is the number of wrong probes left.
+
+If you probe ith index first then two things can happen. Either 
+it is greater or not. If greater than you recurse on P(i, 2).
+Otherwise you recurse on P(n-i, 3).
+So P(n,3) =
+         = 1+ P(n-i, 3) [this happens a few times before switching
+		                  to the next]
+         = 1 + P(i, 2)
+
+Unrolling the first recursion gives you a cost of at most n/i.
+A trivial bound for the second is i.
+Total cost is (n/i)+i which is minimized for i=sqrt(n).
+
+So the algorithm 
+probes sqrt(n), 2sqrt(n), 3sqrt(n), etc. till you hit a number
+that is greater. Then search linearly from the previous probe.
+Total is $O(\sqrt(n))$.
+
+If you do not mind destroying the array, you can do it with less probes. 
+
+Q3
+
+First, we can throw away all elements except the first k of both arrays.
+Which two elements to compare first? 
+Like in Bin Search, we would like to do a compare that throws away
+as many elements as possible. In other words shrinks the input as much
+as possible.
+If you compare A[i] and B[i]. Suppose A[i] < B[i] then 
+the first i-1 elements of A and the last i-1 elements of B
+are on either side of the median. Why? We may remove them and recurse.
+
+Compare A[k/2] and B[k/2].
+Assume that A[k/2] < B[k/2]
+
+Throw away the first $k/2$ elements
+of the array A  and the last k/2 elements of the array B
+and recurse with k= k/2. 
+
+Q4
+
+There are many answers possible. One way is to scan the array from
+left to right and use a stack.
+
+The stack contains elements for which this field has not been filled.
+Now on scanning A[i], 
+Repeatedly check if the top of stack is larger than A[i].
+If yes,  then set the value of the tos's pointer to i.
+That is A[i] is  the first element to the right of TOS which is less.
+Pop stack and repeat.
+Otherwise push A[i] onto stack, increment i  and loop.
+
+
+Q3
+
+You can get O(n\log n)  by dividing into halves
+and recursing.
+
+Suppose there are n elements and n is even.
+Pair up the elements and  do the test.
+If in a pair they are unequal throw both of them out.
+If in a pair they are equal throw only one out.
+
+Recurse on the reminder.
+The key point is that a majority in the original array
+remains a majority in the new array.
+
+Again there is a technical point when n is even and 
+odd which you can ignore.
+
+Analysis: T(n) = n/2 + T(n/2) whose solution is O(n).
+
+There are other ways, for instance, using a souped up induction.
+Can you find this?
+
+Again 10 marks for attempting.
+15 for an O(nlog n) solution
+and 20 marks for the correct answer.
+
+Q5
+
+There are two orders. One is the roll numbers.
+The other is the permutation which we wish to find.
+When I say that an element is smaller than another, I mean the
+first order. When I say an element comes after or before 
+another element, I mean the order in the permutation.
+
+Using divide and Conquer:
+[This gives a more complicated solution. You may skip this
+and read the simpler one using BBSTs.]
+
+The obvious divide and conquer paradigm here will be to 
+split the array into two parts. One of the key things in
+DC is to be able to generate input for the two parts.
+For the right half of the array, this is fine. The same
+input works. How about the left half? If this has to work,
+you will have to find, for each element on the left half, the
+number of elements on the right half which are smaller.
+This does not seem obvious. If you did indeed try this then
+pat yourself on your back. Forget what marks you got: this is
+something you should have tried. 
+Now you notice that even if you did recurse, what you have on
+the right, for instance is a permutation of $1$ to $n/2$.
+How do we know the exact value?
+
+The other way to divide is:
+into the smaller $n/2$ roll numbers and the larger $n/2$ roll numbers.
+Suppose you do manage to divide them in this way, say in $O(n)$ time,
+do you see that input partitioning is easy and the rest follows?
+
+Step 1:
+
+Decide whether a number is in  the smaller or larger half by scanning
+the array from left to right. 
+
+Consider  the $i$th element in the permutation.
+For the first $i-1$ elements you know which are 
+among the first $n/2$ roll numbers (smaller) and which are
+larger. Assume that among the first $i-1$ elements
+there are $b_i$ elements which are in the smaller half.
+Then the $i$th element is a larger element 
+if and only if $A[i] + b_i + 1 > n/2$. Why?
+See if you can argue this before reading ahead.
+Suppose this were a smaller element. Then in the left side
+of the inequality, we count the number of smaller elements
+to its right, plus itself (a small element) plus smaller
+elements to its left. Certainly the total is at most the
+number of small elements which is $n/2$.
+On the other hand if it is a large element argue that you
+count ALL the small elements plus itself so the total has
+to be larger than $n/2$.
+
+Step 2.
+First notice that one can recurse on the smaller elements straight
+away. For a given smaller element (say at the $i$th position)
+we need  the number of smaller elements 
+to its right and this is just $A[i]$ itself. 
+
+For a larger number (say at the $j$th location)
+what we have is the total number of elements
+to the right which are smaller in value $A[i]$.
+This includes both larger numbers
+and smaller numbers. However we also know the number of smaller numbers
+there are to its right ($n/2-b_j-1$). Hence the recursive call for
+this position will use the value $A[j]- n/2 + b_j + 1$.
+
+Here is an example:
+Input is : 4, 4, 0, 1, 1, 0
+
+n is 6.  n/2 is 3.
+b_1 = 0. 
+But 4 + 0 + 1 > 3 and hence the first element is a larger element. 
+
+b_2 = 0.
+Again 4+0+1 > 3 and hence second element is also a larger element.
+
+b_3 =0
+Now 1+ 0 +1 <= 3 and hence third element is in the first half.
+And we increment the b-counter.
+
+b_4 = 1
+1+1+1 <= 3 and the fourth element is in the first half.
+Increment b.
+
+b_5 = 2
+2+1+1 > 3 and the fifth element is in the second half, a larger element.
+
+b_6= 2
+And the last element is smaller.
+
+So, we have, the elements classified as follows:
+LLSSLS
+We recurse on the two parts:
+The smaller part has input: 0,1,0
+The larger part has input: 1, 1,0
+
+If you recurse and solve, the smaller returns the permutation: 1,3, 2
+The larger part returns the permutation: 2,3,1
+Adding n/2 to the larger part gives you the permutation 5,6,4.
+Now you insert the smaller and larger permutations into
+LLSSLS to get
+
+5, 6, 1, 3, 4, 2
+
+Check that this is the answer we require.
+
+
+Solution 2:
+Use balanced trees appropriately.
+Here is the inductive way of thinking: Suppose you have the
+first $k$ elements in the permutation. How do you get the $k+1$th?
+Well $t= A[k+1] +1$ gives you the number of elements smaller than
+it including itself, to the right. Suppose this element is not
+present in the left, then you are done. This is the answer.
+Arguing similarly the answer is the $t$th element  
+which is not present among the numbers seen so far.
+This you can do with a BBST.
+
+There are other static ways of doing this.
+

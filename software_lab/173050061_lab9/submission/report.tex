@@ -1,0 +1,173 @@
+\documentclass[12pt]{article}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{caption}
+\hypersetup{
+	colorlinks=true,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+\usepackage{tgbonum}
+\graphicspath{ {images/} }
+\title{Report on Assignment8 }
+\author{Dhaval Limdiwala (173050061) \\ \\ CS-699 \\ IIT Bombay}
+\date{October 3 2017}
+\pagebreak
+\begin{document}
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+\listoftables
+\pagebreak
+\listoffigures
+\pagebreak
+\section{Top five import and export destinations, by total imports and total exports}
+\subsection{Import destnations}
+\par {\ttfamily Imports are calculated using {\huge Total value\(INR\)}.}
+\par First group by operation on country is performed and and sum aggregate is applied. After that sort is performed and top 5 countries are extracted using head.
+Here are top five destinations by total imports
+
+\begin{itemize}
+	\item CHINA P RP
+	\item U ARAB EMTS
+	\item SWITZERLAND
+	\item SAUDI ARAB
+	\item U S A	
+\end{itemize}
+\subsection{Export destnations}
+\par {\sffamily Exports are calculated using total value\(INR\) using the samew procedure as mentioned above.}
+Here are top five destinations b total exports
+\begin{itemize}
+	\item U ARAB EMTS
+	\item U S A
+	\item CHINA P RP
+	\item SINGAPORE
+	\item UNSPECIFIED
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=10cm,width=10cm]{image_1.jpg}
+	\caption{All countries and their contibution in total imports}
+	\label{All countries and their contibution in total imports}
+	\includegraphics[height=10cm,width=10cm]{image_2.jpg}
+	\caption{All countries and their contibution in total exports}
+	\label{All countries and their contibution in total exports}
+\end{figure}
+\pagebreak
+\begin{figure}[H]
+	\includegraphics[height=10cm,width=10cm]{image_4.jpg}
+	\caption{Top five coutries wrt total Imports}
+	\label{Top five coutries wrt total Imports}
+	\includegraphics[height=10cm,width=10cm]{image_5.jpg}
+	\caption{Top five coutries wrt total Exports}
+		\label{Top five coutries wrt total Exports}
+\end{figure}
+\pagebreak
+\section{Top five import and export commodities}
+\begin{itemize}
+	\item Top five import commodities are
+		\begin{enumerate}
+			\item PETROLEUM, CRUDE \& PRODUCTS
+			\item GOLD
+			\item ELECTRONIC GOODS
+			\item MACHRY EXCPT ELEC \& ELECTRONIC
+			\item PERLS PRCUS SEMIPRCS STONES
+		\end{enumerate}
+
+
+	\item Top five export commodities are
+		\begin{enumerate}
+			\item PETROLEUM, CRUDE \& PRODUCTS
+			\item GEMS \& JEWELLARY
+			\item TRANSPORT EQUIPMENTS
+			\item OTHER COMMODITIES
+			\item MACHINERRY AND INSTRUMENTS
+			
+		\end{enumerate}
+\end{itemize}
+
+
+\pagebreak
+\section{All countries to whom our export is more than Rs 10,000 Cr using query method}
+\begin{table}[H]
+	\centering
+	\input{table1}
+	\label{All countries to whom our export is more than Rs 10,000 Cr using query method}
+	\caption{All countries to whom our export is more than Rs 10,000 Cr using query method}
+\end{table}
+\input{table1}
+
+\pagebreak
+\section{Creating a new table with column headings "Country", "Transaction", "Value" from table in answer 5 using melt mothod}
+\begin{table}[H]
+	\centering
+	\input{table2}
+	\label{table with column headings "Country", "Transaction", "Value"}
+	\caption{table with column headings "Country", "Transaction", "Value"}
+\end{table}
+
+\pagebreak
+\section{Commodities that we both export and import}
+\begin{table}[H]
+	\centering
+	\input{table3}
+	\label{Commodities that we both export and import}
+	\caption{Commodities that we both export and import}
+\end{table}
+
+\pagebreak
+
+\section{Random content}
+
+Here are formulas for gaussian distribution.
+\begin{equation}
+	F (x) = \frac{1}{\sigma \sqrt {2\pi}}e^{\frac{ - \left( {x - \mu } \right)^2}{2\sigma^2}}
+\end{equation}
+where,
+\begin{equation}
+	\mu = \frac{1}{N}\sum_{i = 1}^{N}x_i
+\end{equation}
+\begin{equation}
+	\sigma^2 = \frac{1}{N}\sum_{i=1}^{N}(x_i - \mu)^2
+\end{equation}
+
+Here, is the histogram which decribes above gaussian distribution
+\begin{figure}[H]
+\centering
+	\includegraphics[height=10cm,width=10cm]{image_3.jpg}
+	\caption{Gaussian histogram}
+	\label{Gaussian histogram}
+\end{figure}
+
+
+
+Some more random Line Charts
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=10cm,width=10cm]{image_6.jpg}
+	\caption{Sine wave}
+	\label{Sine wave}
+	\includegraphics[height=10cm,width=10cm]{image_7.jpg}
+	\caption{Cos wave}
+	\label{Cos wave}
+\end{figure}
+
+Some more formulas
+\\ \\ \\
+Binomial distribution
+\begin{equation}
+	f(k;p) = p^k(1 - p)^{1-k} .....for k \in (0,1)
+\end{equation}
+
+Beta distribution
+\begin{equation}
+	PDF = \frac{x^{\alpha - 1}(1 - x)^{\beta - 1}}{B(\alpha,\beta)}.....where B(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha + \beta)}
+\end{equation}
+\end{document}
